@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Param's Dental Clinic in Hosahalli, Bangalore - Premium dental care services including general dentistry, teeth whitening, root canal, implants, and orthodontics.">
+    <meta name="keywords" content="dental clinic Bangalore, dentist Hosahalli, teeth whitening, dental implants, root canal treatment, orthodontics, cosmetic dentistry">
+    <meta name="author" content="Param's Dental Clinic">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Param's Dental - Premium Dental Care in Bangalore">
+    <meta property="og:description" content="Professional dental care in Hosahalli, Bangalore. Expert dentists, advanced technology, and patient-centric care.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://paramsdental.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Param's Dental - Dental Care Bangalore">
+    <meta name="twitter:description" content="Professional dental clinic in Hosahalli offering comprehensive dental services.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://paramsdental.com">
+    <title>Param's Dental - Premium Dental Care in Hosahalli, Bangalore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Param's Dental Clinic",
+      "description": "Premium dental clinic offering comprehensive dental care services",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hosahalli",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560034",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-98765-43210",
+      "email": "info@paramsdental.com",
+      "priceRange": "$$",
+      "medicalSpecialty": "Dentistry",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="logo.png" alt="Param's Dental Logo" class="logo-img" title="Param's Dental - Premium Dental Care">
+                    <h1>Param's Dental</h1>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#appointment" class="btn-cta">Book Appointment</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Smile, Our Priority</h1>
+            <p>Professional Dental Care You Can Trust</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Hosahalli, Bangalore</p>
+            <button class="btn btn-primary" onclick="document.getElementById('appointment').scrollIntoView({behavior: 'smooth'})">Book Your Appointment</button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>General Dentistry</h3>
+                    <p>Routine check-ups, cleanings, and preventive dental care for the whole family.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-sparkles"></i>
+                    <h3>Teeth Whitening</h3>
+                    <p>Professional teeth whitening treatments to brighten your smile.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bone"></i>
+                    <h3>Root Canal Treatment</h3>
+                    <p>Advanced endodontic treatment to save infected or damaged teeth.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Dental Crowns & Bridges</h3>
+                    <p>Restore missing or damaged teeth with high-quality crowns and bridges.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-align-center"></i>
+                    <h3>Orthodontics</h3>
+                    <p>Teeth alignment and bite correction with modern orthodontic solutions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent tooth replacement solution for a natural-looking smile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Slider Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Official Tie-up Companies</h2>
+            <div class="logo-slider">
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slider-item">
+                            <div class="logo-placeholder">Partner 1</div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="logo-placeholder">Partner 2</div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="logo-placeholder">Partner 3</div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="logo-placeholder">Partner 4</div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="logo-placeholder">Partner 5</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #666;">
+                Replace placeholder logos with your official tie-up company logos
+            </p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Param's Dental</h2>
+                    <p>Param's Dental is a state-of-the-art dental clinic located in Hosahalli, Bangalore, dedicated to providing exceptional dental care to our community. With a team of experienced and compassionate dentists, we are committed to ensuring every patient receives personalized treatment and achieves their best smile.</p>
+                    <p>Our clinic is equipped with the latest dental technology and follows international standards for sterilization and safety. We believe in patient education and creating a comfortable environment where our patients feel valued and cared for.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Experienced Dentists</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced Technology</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Patient-Centric Care</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Affordable Services</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-image">Clinic Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs">
+        <div class="container">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image"><i class="fas fa-blog"></i></div>
+                    <h3>5 Tips for Better Oral Hygiene</h3>
+                    <p>Learn the essential daily habits to maintain a healthy smile and prevent dental problems.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image"><i class="fas fa-tooth"></i></div>
+                    <h3>Understanding Root Canal Treatment</h3>
+                    <p>Myths and facts about root canal therapy and why it's an important tooth-saving procedure.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image"><i class="fas fa-smile"></i></div>
+                    <h3>Teeth Whitening: What You Need to Know</h3>
+                    <p>Discover safe and effective methods to brighten your smile professionally.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How often should I visit the dentist?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend visiting your dentist at least twice a year for routine check-ups and professional cleaning. However, patients with specific conditions may need more frequent visits.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is dental implant surgery painful?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The procedure is performed under local anesthesia, so you won't feel pain during the surgery. You may experience some mild discomfort and swelling post-surgery, which is normal and manageable with prescribed pain relief.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment options do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept cash, all major credit/debit cards, digital wallets, and installment plans for major treatments. Please contact us for more details on EMI options.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer emergency dental services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We provide emergency dental services. Please call us immediately if you're experiencing dental pain or an emergency.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is teeth whitening safe?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Professional teeth whitening is safe when done by qualified dentists. We use approved whitening agents and customize the treatment based on your teeth sensitivity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your cancellation policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cancellations must be made at least 24 hours in advance. Late cancellations may incur a cancellation fee. We value your time and ask for the same consideration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <p class="subtitle">Real reviews from our Google Business Profile</p>
+            <div class="testimonials-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Excellent service! Dr. Param is very professional and patient. The clinic is clean and well-maintained. Highly recommended!"</p>
+                        <h4>Raj Kumar</h4>
+                        <span>Verified on Google</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Best dental clinic in Hosahalli. The treatment is painless and the staff is very friendly. Worth every penny!"</p>
+                        <h4>Priya Singh</h4>
+                        <span>Verified on Google</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Had my dental implant done here. Fantastic experience from start to finish. Dr. Param explained everything clearly."</p>
+                        <h4>Arjun Mehta</h4>
+                        <span>Verified on Google</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Very impressed with the teeth whitening service. Results were amazing and the price was reasonable too!"</p>
+                        <h4>Neha Sharma</h4>
+                        <span>Verified on Google</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Friendly staff, modern equipment, and excellent care. I bring my whole family here now!"</p>
+                        <h4>Amit Patel</h4>
+                        <span>Verified on Google</span>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section id="appointment" class="appointment">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <div class="appointment-wrapper">
+                <form class="appointment-form" id="appointmentForm">
+                    <div class="form-group">
+                        <label for="patientName">Full Name *</label>
+                        <input type="text" id="patientName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientPhone">Phone Number *</label>
+                        <input type="tel" id="patientPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientEmail">Email *</label>
+                        <input type="email" id="patientEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Preferred Date *</label>
+                        <input type="date" id="appointmentDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentTime">Preferred Time *</label>
+                        <select id="appointmentTime" name="time" required>
+                            <option value="">Select a time slot</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="05:30 PM">05:30 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentService">Service Required *</label>
+                        <select id="appointmentService" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="General Dentistry">General Dentistry</option>
+                            <option value="Teeth Whitening">Teeth Whitening</option>
+                            <option value="Root Canal Treatment">Root Canal Treatment</option>
+                            <option value="Dental Crowns & Bridges">Dental Crowns & Bridges</option>
+                            <option value="Orthodontics">Orthodontics</option>
+                            <option value="Dental Implants">Dental Implants</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentNotes">Additional Notes</label>
+                        <textarea id="appointmentNotes" name="notes" rows="4" placeholder="Any specific concerns or questions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Appointment</button>
+                </form>
+                <div class="appointment-info">
+                    <h3>Visit Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>Param's Dental Clinic<br>Hosahalli, Bangalore</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br><a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p><i class="fas fa-clock"></i> <strong>Hours:</strong><br>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: By Appointment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form Section -->
+    <section class="enquiry">
+        <div class="container">
+            <h2 class="section-title">Have Questions? Get in Touch</h2>
+            <form class="enquiry-form" id="enquiryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="enquiryName">Your Name *</label>
+                        <input type="text" id="enquiryName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enquiryEmail">Email Address *</label>
+                        <input type="email" id="enquiryEmail" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="enquiryPhone">Phone Number *</label>
+                        <input type="tel" id="enquiryPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enquirySubject">Subject *</label>
+                        <input type="text" id="enquirySubject" name="subject" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="enquiryMessage">Message *</label>
+                    <textarea id="enquiryMessage" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Param's Dental</h4>
+                    <p>Your trusted dental care provider in Hosahalli, Bangalore.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blogs">Blog</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p>Email: <a href="mailto:info@paramsdental.com">info@paramsdental.com</a></p>
+                    <p>Hosahalli, Bangalore</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Param's Dental. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
