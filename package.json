@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
-    "start:prod": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "start": "node server.js",
+    "start:prod": "node server.js",
     "docker:build": "docker build -t paramsdental-web .",
     "docker:up": "docker compose up -d --build",
     "docker:logs": "docker compose logs -f web",
