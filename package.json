@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:prod": "node .next/standalone/server.js",
+    "start:prod": "next start",
     "docker:build": "docker build -t paramsdental-web .",
     "docker:up": "docker compose up -d --build",
     "docker:logs": "docker compose logs -f web",
