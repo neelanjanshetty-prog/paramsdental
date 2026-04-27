@@ -1,0 +1,135 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+    background-image:
+      radial-gradient(circle at top, rgba(183, 227, 246, 0.55), transparent 26%),
+      linear-gradient(180deg, rgba(245, 250, 253, 0.96), rgba(255, 255, 255, 0.92));
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top, rgba(76, 185, 231, 0.12), transparent 26%),
+      linear-gradient(180deg, rgba(6, 18, 32, 0.98), rgba(7, 22, 40, 0.95));
+  }
+
+  * {
+    scrollbar-color: rgba(13, 76, 146, 0.45) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(76, 185, 231, 0.9), rgba(13, 76, 146, 0.9));
+  }
+
+  input,
+  select,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(var(--glass-bg));
+    border: 1px solid rgba(var(--glass-stroke));
+    @apply backdrop-blur-xl shadow-glass;
+  }
+
+  .section-shell {
+    @apply relative overflow-hidden py-14 md:py-20 lg:py-28;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-200/70 bg-white/60 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-600 dark:border-primary-800 dark:bg-white/5 dark:text-primary-300 sm:px-4 sm:text-xs sm:tracking-[0.32em];
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(76, 185, 231, 0.72), rgba(13, 76, 146, 0.38));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .button-primary {
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary-600 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-glow sm:px-6;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-primary-200 bg-white/70 px-5 py-3 text-sm font-semibold text-primary-700 transition duration-300 hover:-translate-y-0.5 hover:border-primary-300 hover:bg-white hover:shadow-panel dark:border-primary-800 dark:bg-white/5 dark:text-primary-200 dark:hover:bg-white/10 sm:px-6;
+  }
+
+  .mesh-overlay {
+    background-image:
+      radial-gradient(circle at center, rgba(76, 185, 231, 0.16), transparent 42%),
+      linear-gradient(rgba(13, 76, 146, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 76, 146, 0.08) 1px, transparent 1px);
+    background-size: auto, 52px 52px, 52px 52px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-fade {
+    background: linear-gradient(180deg, rgba(var(--ink), 1), rgba(var(--ink), 0.68));
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, #000 42%, transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

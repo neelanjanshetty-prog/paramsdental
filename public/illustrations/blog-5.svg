@@ -1,0 +1,16 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" rx="40" fill="url(#paint0_linear_35_1)"/>
+  <circle cx="208" cy="124" r="152" fill="white" fill-opacity="0.12"/>
+  <text x="80" y="136" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">BLOG 05</text>
+  <text x="80" y="264" fill="white" font-family="Arial, sans-serif" font-size="72" font-weight="700">Root Canal</text>
+  <text x="80" y="344" fill="white" font-family="Arial, sans-serif" font-size="72" font-weight="700">Myths</text>
+  <rect x="803" y="183" width="214" height="286" rx="40" fill="white" fill-opacity="0.18"/>
+  <circle cx="910" cy="323" r="84" fill="white"/>
+  <path d="M878 323L901 346L943 304" stroke="#0D4C92" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_35_1" x1="70" y1="37" x2="1102" y2="694" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D4C92"/>
+      <stop offset="1" stop-color="#082C55"/>
+    </linearGradient>
+  </defs>
+</svg>

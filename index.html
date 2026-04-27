@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Param's Dental Clinic in Hosahalli, Bangalore - Premium dental care services including general dentistry, teeth whitening, root canal, implants, and orthodontics.">
-    <meta name="keywords" content="dental clinic Bangalore, dentist Hosahalli, teeth whitening, dental implants, root canal treatment, orthodontics, cosmetic dentistry">
+    <meta name="description" content="Param's Dental Clinic near Hosahalli Metro Station in Vijayanagar, Bengaluru - Premium dental care services including general dentistry, teeth whitening, root canal, implants, and orthodontics.">
+    <meta name="keywords" content="dental clinic Bengaluru, dentist Vijayanagar, dentist Hosahalli Metro, teeth whitening, dental implants, root canal treatment, orthodontics, cosmetic dentistry">
     <meta name="author" content="Param's Dental Clinic">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Param's Dental - Premium Dental Care in Bangalore">
-    <meta property="og:description" content="Professional dental care in Hosahalli, Bangalore. Expert dentists, advanced technology, and patient-centric care.">
+    <meta property="og:description" content="Professional dental care near Hosahalli Metro Station, Bengaluru. Expert dentists, advanced technology, and patient-centric care.">
     <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://paramsdental.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Param's Dental - Dental Care Bangalore">
-    <meta name="twitter:description" content="Professional dental clinic in Hosahalli offering comprehensive dental services.">
+    <meta name="twitter:description" content="Professional dental clinic near Hosahalli Metro Station offering comprehensive dental services.">
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://paramsdental.com">
-    <title>Param's Dental - Premium Dental Care in Hosahalli, Bangalore</title>
+    <title>Param's Dental - Premium Dental Care in Vijayanagar, Bengaluru</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Premium Hover States & Smooth Transitions */
+        .service-card, .blog-card, .testimonial-card {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+        }
+        .service-card:hover, .blog-card:hover, .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .btn, .btn-cta, .btn-primary {
+            transition: all 0.3s ease-in-out !important;
+        }
+        .btn:hover, .btn-cta:hover, .btn-primary:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,22 +46,22 @@
       "description": "Premium dental clinic offering comprehensive dental care services",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Hosahalli",
-        "addressLocality": "Bangalore",
+        "streetAddress": "1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar",
+        "addressLocality": "Bengaluru",
         "addressRegion": "Karnataka",
-        "postalCode": "560034",
+        "postalCode": "560040",
         "addressCountry": "IN"
       },
-      "telephone": "+91-98765-43210",
-      "email": "info@paramsdental.com",
+      "telephone": "081233 38324",
+      "email": "paramsdental@gmail.com",
       "priceRange": "$$",
       "medicalSpecialty": "Dentistry",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "09:00",
-          "closes": "18:00"
+          "opens": "10:00",
+          "closes": "20:30"
         }
       ]
     }
@@ -57,7 +76,7 @@
                     <img src="logo.png" alt="Param's Dental Logo" class="logo-img" title="Param's Dental - Premium Dental Care">
                     <h1>Param's Dental</h1>
                 </div>
-                <button class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -78,10 +97,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Your Smile, Our Priority</h1>
-            <p>Professional Dental Care You Can Trust</p>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> Hosahalli, Bangalore</p>
-            <button class="btn btn-primary" onclick="document.getElementById('appointment').scrollIntoView({behavior: 'smooth'})">Book Your Appointment</button>
+            <h1 data-aos="fade-up" data-aos-duration="1000">Your Smile, Our Priority</h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Professional Dental Care You Can Trust</p>
+            <p class="location" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><i class="fas fa-map-marker-alt"></i> Near Hosahalli Metro Station, Bengaluru</p>
+            <button class="btn btn-primary" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" onclick="document.getElementById('appointment').scrollIntoView({behavior: 'smooth'})">Book Your Appointment</button>
         </div>
         <div class="hero-overlay"></div>
     </section>
@@ -89,34 +108,34 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title" data-aos="fade-up">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-tooth"></i>
                     <h3>General Dentistry</h3>
                     <p>Routine check-ups, cleanings, and preventive dental care for the whole family.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-sparkles"></i>
                     <h3>Teeth Whitening</h3>
                     <p>Professional teeth whitening treatments to brighten your smile.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-bone"></i>
                     <h3>Root Canal Treatment</h3>
                     <p>Advanced endodontic treatment to save infected or damaged teeth.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <i class="fas fa-crown"></i>
                     <h3>Dental Crowns & Bridges</h3>
                     <p>Restore missing or damaged teeth with high-quality crowns and bridges.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <i class="fas fa-align-center"></i>
                     <h3>Orthodontics</h3>
                     <p>Teeth alignment and bite correction with modern orthodontic solutions.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <i class="fas fa-syringe"></i>
                     <h3>Dental Implants</h3>
                     <p>Permanent tooth replacement solution for a natural-looking smile.</p>
@@ -128,8 +147,8 @@
     <!-- Logo Slider Section -->
     <section class="partners">
         <div class="container">
-            <h2 class="section-title">Our Official Tie-up Companies</h2>
-            <div class="logo-slider">
+            <h2 class="section-title" data-aos="fade-in">Our Official Tie-up Companies</h2>
+            <div class="logo-slider" data-aos="zoom-in" data-aos-delay="100">
                 <div class="slider-wrapper">
                     <div class="slider-track" id="sliderTrack">
                         <div class="slider-item">
@@ -149,8 +168,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-btn prev" id="prevBtn" aria-label="Previous partner"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="nextBtn" aria-label="Next partner"><i class="fas fa-chevron-right"></i></button>
             </div>
             <p style="text-align: center; margin-top: 20px; color: #666;">
                 Replace placeholder logos with your official tie-up company logos
@@ -162,9 +181,9 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right">
                     <h2>About Param's Dental</h2>
-                    <p>Param's Dental is a state-of-the-art dental clinic located in Hosahalli, Bangalore, dedicated to providing exceptional dental care to our community. With a team of experienced and compassionate dentists, we are committed to ensuring every patient receives personalized treatment and achieves their best smile.</p>
+                    <p>Param's Dental is a state-of-the-art dental clinic located near Hosahalli Metro Station in Vijayanagar, Bengaluru, dedicated to providing exceptional dental care to our community. With a team of experienced and compassionate dentists, we are committed to ensuring every patient receives personalized treatment and achieves their best smile.</p>
                     <p>Our clinic is equipped with the latest dental technology and follows international standards for sterilization and safety. We believe in patient education and creating a comfortable environment where our patients feel valued and cared for.</p>
                     <div class="about-features">
                         <div class="feature">
@@ -185,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-left">
                     <div class="placeholder-image">Clinic Image</div>
                 </div>
             </div>
@@ -195,21 +214,21 @@
     <!-- Blogs Section -->
     <section id="blogs" class="blogs">
         <div class="container">
-            <h2 class="section-title">Latest from Our Blog</h2>
+            <h2 class="section-title" data-aos="fade-up">Latest from Our Blog</h2>
             <div class="blog-grid">
-                <article class="blog-card">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-image"><i class="fas fa-blog"></i></div>
                     <h3>5 Tips for Better Oral Hygiene</h3>
                     <p>Learn the essential daily habits to maintain a healthy smile and prevent dental problems.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
-                <article class="blog-card">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="blog-image"><i class="fas fa-tooth"></i></div>
                     <h3>Understanding Root Canal Treatment</h3>
                     <p>Myths and facts about root canal therapy and why it's an important tooth-saving procedure.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
-                <article class="blog-card">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="blog-image"><i class="fas fa-smile"></i></div>
                     <h3>Teeth Whitening: What You Need to Know</h3>
                     <p>Discover safe and effective methods to brighten your smile professionally.</p>
@@ -222,10 +241,10 @@
     <!-- FAQs Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
             <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question" aria-expanded="false">
                         <span>How often should I visit the dentist?</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -233,7 +252,7 @@
                         <p>We recommend visiting your dentist at least twice a year for routine check-ups and professional cleaning. However, patients with specific conditions may need more frequent visits.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
                     <button class="faq-question">
                         <span>Is dental implant surgery painful?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -242,7 +261,7 @@
                         <p>The procedure is performed under local anesthesia, so you won't feel pain during the surgery. You may experience some mild discomfort and swelling post-surgery, which is normal and manageable with prescribed pain relief.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <button class="faq-question">
                         <span>What payment options do you accept?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -251,7 +270,7 @@
                         <p>We accept cash, all major credit/debit cards, digital wallets, and installment plans for major treatments. Please contact us for more details on EMI options.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
                     <button class="faq-question">
                         <span>Do you offer emergency dental services?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -260,7 +279,7 @@
                         <p>Yes! We provide emergency dental services. Please call us immediately if you're experiencing dental pain or an emergency.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <button class="faq-question">
                         <span>Is teeth whitening safe?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -269,7 +288,7 @@
                         <p>Professional teeth whitening is safe when done by qualified dentists. We use approved whitening agents and customize the treatment based on your teeth sensitivity.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
                     <button class="faq-question">
                         <span>What is your cancellation policy?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -285,9 +304,9 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Patients Say</h2>
-            <p class="subtitle">Real reviews from our Google Business Profile</p>
-            <div class="testimonials-carousel">
+            <h2 class="section-title" data-aos="fade-up">What Our Patients Say</h2>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Real reviews from our Google Business Profile</p>
+            <div class="testimonials-carousel" data-aos="zoom-in" data-aos-delay="200">
                 <div class="testimonial-track" id="testimonialTrack">
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
@@ -297,7 +316,7 @@
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p>"Best dental clinic in Hosahalli. The treatment is painless and the staff is very friendly. Worth every penny!"</p>
+                        <p>"Best dental clinic near Hosahalli Metro. The treatment is painless and the staff is very friendly. Worth every penny!"</p>
                         <h4>Priya Singh</h4>
                         <span>Verified on Google</span>
                     </div>
@@ -320,8 +339,8 @@
                         <span>Verified on Google</span>
                     </div>
                 </div>
-                <button class="carousel-btn prev" id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-btn next" id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-btn prev" id="testimonialPrev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="testimonialNext" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -329,20 +348,20 @@
     <!-- Appointment Booking Section -->
     <section id="appointment" class="appointment">
         <div class="container">
-            <h2 class="section-title">Book Your Appointment</h2>
+            <h2 class="section-title" data-aos="fade-up">Book Your Appointment</h2>
             <div class="appointment-wrapper">
-                <form class="appointment-form" id="appointmentForm">
+                <form class="appointment-form" id="appointmentForm" data-aos="fade-right" data-aos-delay="100">
                     <div class="form-group">
                         <label for="patientName">Full Name *</label>
-                        <input type="text" id="patientName" name="name" required>
+                        <input type="text" id="patientName" name="name" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="patientPhone">Phone Number *</label>
-                        <input type="tel" id="patientPhone" name="phone" required>
+                        <input type="tel" id="patientPhone" name="phone" required autocomplete="tel">
                     </div>
                     <div class="form-group">
                         <label for="patientEmail">Email *</label>
-                        <input type="email" id="patientEmail" name="email" required>
+                        <input type="email" id="patientEmail" name="email" required autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="appointmentDate">Preferred Date *</label>
@@ -352,8 +371,6 @@
                         <label for="appointmentTime">Preferred Time *</label>
                         <select id="appointmentTime" name="time" required>
                             <option value="">Select a time slot</option>
-                            <option value="09:00 AM">09:00 AM</option>
-                            <option value="09:30 AM">09:30 AM</option>
                             <option value="10:00 AM">10:00 AM</option>
                             <option value="10:30 AM">10:30 AM</option>
                             <option value="11:00 AM">11:00 AM</option>
@@ -386,11 +403,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Appointment</button>
                 </form>
-                <div class="appointment-info">
+                <div class="appointment-info" data-aos="fade-left" data-aos-delay="200">
                     <h3>Visit Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>Param's Dental Clinic<br>Hosahalli, Bangalore</p>
-                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br><a href="tel:+919876543210">+91 98765 43210</a></p>
-                    <p><i class="fas fa-clock"></i> <strong>Hours:</strong><br>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: By Appointment</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>Param's Dental Clinic<br>1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar, Bengaluru – 560040<br>Near Hosahalli Metro Station</p>
+                    <p><a href="https://share.google/fricUdGxm2tMZ3QDI" target="_blank" rel="noopener noreferrer">Get Directions</a></p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br><a href="tel:+918123338324">081233 38324</a></p>
+                    <p><i class="fas fa-clock"></i> <strong>Hours:</strong><br>Monday - Saturday: 10:00 AM - 8:30 PM<br>Sunday: By Appointment</p>
                 </div>
             </div>
         </div>
@@ -399,22 +417,22 @@
     <!-- Enquiry Form Section -->
     <section class="enquiry">
         <div class="container">
-            <h2 class="section-title">Have Questions? Get in Touch</h2>
-            <form class="enquiry-form" id="enquiryForm">
+            <h2 class="section-title" data-aos="fade-up">Have Questions? Get in Touch</h2>
+            <form class="enquiry-form" id="enquiryForm" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="enquiryName">Your Name *</label>
-                        <input type="text" id="enquiryName" name="name" required>
+                        <input type="text" id="enquiryName" name="name" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="enquiryEmail">Email Address *</label>
-                        <input type="email" id="enquiryEmail" name="email" required>
+                        <input type="email" id="enquiryEmail" name="email" required autocomplete="email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="enquiryPhone">Phone Number *</label>
-                        <input type="tel" id="enquiryPhone" name="phone" required>
+                        <input type="tel" id="enquiryPhone" name="phone" required autocomplete="tel">
                     </div>
                     <div class="form-group">
                         <label for="enquirySubject">Subject *</label>
@@ -436,7 +454,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Param's Dental</h4>
-                    <p>Your trusted dental care provider in Hosahalli, Bangalore.</p>
+                    <p>Your trusted dental care provider near Hosahalli Metro Station, Bengaluru.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -449,17 +467,17 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
-                    <p>Email: <a href="mailto:info@paramsdental.com">info@paramsdental.com</a></p>
-                    <p>Hosahalli, Bangalore</p>
+                    <p>Phone: <a href="tel:+918123338324">081233 38324</a></p>
+                    <p>Email: <a href="mailto:paramsdental@gmail.com">paramsdental@gmail.com</a></p>
+                    <p>1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar, Bengaluru – 560040<br>Near Hosahalli Metro Station</p>
                 </div>
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -473,5 +491,18 @@
     <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
+    
+    <!-- AOS Animation Script Integration -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="url(#paint0_linear_22_1)"/>
+  <circle cx="600" cy="402" r="246" fill="#FFF2E8"/>
+  <ellipse cx="515" cy="343" rx="28" ry="20" fill="#1A1A1A"/>
+  <ellipse cx="685" cy="343" rx="28" ry="20" fill="#1A1A1A"/>
+  <path d="M390 510C474 602 726 602 810 510" stroke="#C86E55" stroke-width="34" stroke-linecap="round"/>
+  <path d="M430 505C495 559 705 559 770 505" stroke="white" stroke-width="54" stroke-linecap="round"/>
+  <rect x="457" y="474" width="286" height="72" rx="28" fill="white"/>
+  <path d="M475 480H725V545C725 561.569 711.569 575 695 575H505C488.431 575 475 561.569 475 545V480Z" fill="#F0F8FC"/>
+  <path d="M522 478V575" stroke="#D6EAF6" stroke-width="6"/>
+  <path d="M584 478V575" stroke="#D6EAF6" stroke-width="6"/>
+  <path d="M645 478V575" stroke="#D6EAF6" stroke-width="6"/>
+  <path d="M706 478V575" stroke="#D6EAF6" stroke-width="6"/>
+  <text x="74" y="122" fill="#1A1A1A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Before</text>
+  <defs>
+    <linearGradient id="paint0_linear_22_1" x1="84" y1="52" x2="1137" y2="870" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBE6DB"/>
+      <stop offset="1" stop-color="#E8F4FA"/>
+    </linearGradient>
+  </defs>
+</svg>

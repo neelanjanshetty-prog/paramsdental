@@ -1,0 +1,16 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" rx="40" fill="url(#paint0_linear_32_1)"/>
+  <circle cx="1014" cy="130" r="162" fill="white" fill-opacity="0.2"/>
+  <text x="80" y="136" fill="#0D4C92" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">BLOG 02</text>
+  <text x="80" y="264" fill="#0D4C92" font-family="Arial, sans-serif" font-size="72" font-weight="700">How to Keep</text>
+  <text x="80" y="344" fill="#0D4C92" font-family="Arial, sans-serif" font-size="72" font-weight="700">Your Teeth White</text>
+  <rect x="779" y="183" width="246" height="292" rx="42" fill="#0D4C92" fill-opacity="0.12"/>
+  <circle cx="902" cy="329" r="88" fill="white"/>
+  <path d="M860 322L888 357L949 292" stroke="#4CB9E7" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_32_1" x1="64" y1="28" x2="1131" y2="701" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#B7E3F6"/>
+    </linearGradient>
+  </defs>
+</svg>

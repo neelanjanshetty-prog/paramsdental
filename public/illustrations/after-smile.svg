@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="url(#paint0_linear_23_1)"/>
+  <circle cx="600" cy="402" r="246" fill="#FFF8F2"/>
+  <ellipse cx="515" cy="343" rx="28" ry="20" fill="#1A1A1A"/>
+  <ellipse cx="685" cy="343" rx="28" ry="20" fill="#1A1A1A"/>
+  <path d="M382 496C475 618 725 618 818 496" stroke="#D47062" stroke-width="36" stroke-linecap="round"/>
+  <path d="M430 490C500 560 700 560 770 490" stroke="white" stroke-width="60" stroke-linecap="round"/>
+  <rect x="446" y="454" width="308" height="88" rx="30" fill="white"/>
+  <path d="M466 460H734V542C734 560.778 718.778 576 700 576H500C481.222 576 466 560.778 466 542V460Z" fill="#F7FBFE"/>
+  <path d="M519 457V577" stroke="#D3E9F6" stroke-width="6"/>
+  <path d="M580 457V577" stroke="#D3E9F6" stroke-width="6"/>
+  <path d="M640 457V577" stroke="#D3E9F6" stroke-width="6"/>
+  <path d="M700 457V577" stroke="#D3E9F6" stroke-width="6"/>
+  <circle cx="784" cy="196" r="68" fill="#4CB9E7" fill-opacity="0.18"/>
+  <text x="74" y="122" fill="#1A1A1A" font-family="Arial, sans-serif" font-size="54" font-weight="700">After</text>
+  <defs>
+    <linearGradient id="paint0_linear_23_1" x1="86" y1="51" x2="1134" y2="861" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6F5FC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+</svg>
