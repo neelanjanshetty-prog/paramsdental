@@ -86,6 +86,9 @@ export function Footer() {
             <Link href="/blogs" className="transition hover:text-white">
               Blogs
             </Link>
+            <Link href="/privacy-policy" className="transition hover:text-white">
+              Privacy Policy
+            </Link>
             <a href="/sitemap.xml" className="transition hover:text-white">
               Sitemap
             </a>

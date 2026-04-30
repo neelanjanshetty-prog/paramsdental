@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { blogPosts, siteConfig } from '@/data/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/blogs'];
+  const staticRoutes = ['', '/blogs', '/privacy-policy'];
 
   return [
     ...staticRoutes.map((route) => ({
