@@ -117,8 +117,9 @@ export const siteConfig = {
   email: 'paramsdental@gmail.com',
   phone: '081233 38324',
   phoneHref: 'tel:+918123338324',
-  whatsapp: '918123338324',
-  whatsappUrl: 'https://wa.me/918123338324',
+  whatsapp: '919902535254',
+  whatsappUrl:
+    'https://wa.me/919902535254?text=Hi%20Param%27s%20Dental%2C%20I%20would%20like%20to%20book%20an%20appointment.',
   address: '1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar, Bengaluru – 560040\nNear Hosahalli Metro Station',
   directionsUrl: 'https://share.google/fricUdGxm2tMZ3QDI',
   hours: [
@@ -194,7 +195,7 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Dental Surgeon', 'BDS'],
     bio: 'Provides reliable dental care with a focus on patient comfort, careful diagnosis, and practical treatment planning.',
-    image: '/illustrations/doctor-3.svg',
+    image: '/images/dr-rakshitha.jpeg',
   },
   {
     name: 'Dr. Swapna',
@@ -203,7 +204,7 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Dental Surgeon', 'BDS'],
     bio: 'Offers compassionate dental care with attention to detail, preventive guidance, and smooth patient communication.',
-    image: '/illustrations/doctor-4.svg',
+    image: '/images/dr-swapna.jpeg',
   },
   {
     name: 'Dr. Nithin S.B',
@@ -211,7 +212,7 @@ export const doctors: Doctor[] = [
     experience: '12+ years experience',
     specialties: ['Prosthodontist', 'Implantologist'],
     bio: 'Specializes in prosthetic rehabilitation and implant dentistry with a focus on function, aesthetics, and long-term stability.',
-    image: '/illustrations/doctor-5.svg',
+    image: '/images/dr-nithin.png',
   },
   {
     name: 'Dr. Akhilesh',
@@ -219,7 +220,7 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Endodontist', 'Root Canal Specialist'],
     bio: 'Focuses on root canal care and tooth-saving treatments using a calm, precise, and patient-friendly approach.',
-    image: '/illustrations/doctor-1.svg',
+    image: '/images/dr-akhilesh-new.png',
   },
   {
     name: 'Dr. Suhas',

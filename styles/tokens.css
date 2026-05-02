@@ -10,13 +10,13 @@
 }
 
 .dark {
-  --surface: 7 22 40;
-  --surface-elevated: 11 31 54;
-  --ink: 241 247 251;
-  --muted-ink: 176 194 211;
-  --border-soft: 40 86 128;
-  --glass-bg: 9 31 54 / 0.68;
-  --glass-stroke: 123 170 221 / 0.16;
-  --section-glow: 76 185 231;
+  --surface: 8 15 26;
+  --surface-elevated: 15 27 43;
+  --ink: 246 250 252;
+  --muted-ink: 192 207 219;
+  --border-soft: 56 102 142;
+  --glass-bg: 15 29 46 / 0.78;
+  --glass-stroke: 143 198 231 / 0.22;
+  --section-glow: 61 201 169;
   color-scheme: dark;
 }

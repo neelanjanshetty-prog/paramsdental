@@ -53,8 +53,8 @@ export function Navbar() {
             className={cn(
               'flex min-h-[76px] items-center justify-between rounded-full px-4 py-1.5 transition duration-300 md:min-h-20 md:px-5',
               isScrolled
-                ? 'glass-panel border border-white/50 shadow-panel'
-                : 'bg-white/25 backdrop-blur-md dark:bg-white/5'
+                ? 'glass-panel border border-white/50 shadow-panel dark:border-white/10'
+                : 'bg-white/35 backdrop-blur-md dark:border dark:border-white/10 dark:bg-slate-950/45'
             )}
           >
             <Link href="/" className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export function Navbar() {
               </div>
             </Link>
 
-            <nav className="hidden items-center gap-1 rounded-full border border-white/40 bg-white/50 px-2 py-2 dark:border-white/10 dark:bg-white/5 lg:flex">
+            <nav className="hidden items-center gap-1 rounded-full border border-white/40 bg-white/55 px-2 py-2 dark:border-white/10 dark:bg-slate-950/35 lg:flex">
               {navItems.map((item) => {
                 const sectionId = item.href.replace('#', '');
                 const isActive = activeSection === sectionId;

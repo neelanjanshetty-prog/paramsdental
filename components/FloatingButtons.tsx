@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CalendarCheck2 } from 'lucide-react';
+import { Bot, CalendarCheck2 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/data/site';
 
@@ -31,16 +31,25 @@ export function FloatingButtons() {
         href={siteConfig.whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="glass-panel flex items-center gap-2 rounded-full px-3 py-2.5 text-sm font-semibold text-ink shadow-panel sm:gap-3 sm:px-4 sm:py-3"
+        aria-label="Open WhatsApp bot chat"
+        className="relative flex items-center gap-2 rounded-full border border-[#25D366]/40 bg-[#071f15]/90 px-3 py-2.5 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(37,211,102,0.28)] backdrop-blur-xl transition dark:border-[#25D366]/50 dark:bg-[#062116]/95 sm:gap-3 sm:px-4 sm:py-3"
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
         whileHover={{ scale: 1.03, y: -4 }}
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white sm:h-10 sm:w-10">
+        <span className="absolute inset-0 -z-10 rounded-full bg-[#25D366]/35 animate-pulse-ring" />
+        <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white sm:h-10 sm:w-10">
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[#075E54] shadow-sm">
+            <Bot className="h-3 w-3" />
+          </span>
           <WhatsAppLogo className="h-5 w-5 sm:h-6 sm:w-6" />
         </span>
-        <span className="hidden sm:block">WhatsApp</span>
+        <span className="hidden sm:flex sm:flex-col sm:leading-tight">
+          <span>WhatsApp Bot</span>
+          <span className="text-[11px] font-medium text-white/75">+91 99025 35254</span>
+        </span>
+        <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#25D366] shadow-[0_0_0_4px_rgba(37,211,102,0.18)] animate-ping" />
       </motion.a>
 
       <motion.button

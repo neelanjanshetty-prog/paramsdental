@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { navItems, services, siteConfig } from '@/data/site';
 
@@ -81,7 +82,27 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {year} Param&apos;s Dental. All rights reserved.</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <p>&copy; {year} Param&apos;s Dental. All rights reserved.</p>
+            <a
+              href="https://ennesstudio.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Built by ENNESS Studio"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60 transition hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-white/[0.08] hover:text-white"
+            >
+              <span className="whitespace-nowrap">Built by</span>
+              <span className="relative block h-7 w-20 overflow-hidden">
+                <Image
+                  src="/images/enness-studio-logo-white.png"
+                  alt="ENNESS Studio"
+                  fill
+                  className="object-contain opacity-80 transition group-hover:opacity-100"
+                  sizes="80px"
+                />
+              </span>
+            </a>
+          </div>
           <div className="flex flex-wrap gap-4">
             <Link href="/blogs" className="transition hover:text-white">
               Blogs
