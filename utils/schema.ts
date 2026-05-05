@@ -151,7 +151,7 @@ export function getBlogSchema(slug: string) {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: getAbsoluteUrl('/icon.svg'),
+        url: getAbsoluteUrl('/icon.png'),
       },
     },
     image: getAbsoluteUrl('/og-image.svg'),
