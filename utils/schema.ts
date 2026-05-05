@@ -1,9 +1,7 @@
-import { blogPosts, doctors, siteConfig } from '@/data/site';
+import { blogPosts, doctors, faqs, siteConfig } from '@/data/site';
 
 const socialProfiles = [
-  'https://www.instagram.com/paramsdental',
-  'https://www.facebook.com/paramsdental',
-  'https://www.linkedin.com/company/paramsdental',
+  'https://www.instagram.com/paramsdentalblr/',
 ];
 
 function getAbsoluteUrl(path: string) {
@@ -18,12 +16,12 @@ function stripContext<T extends Record<string, unknown>>(schema: T) {
 export function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': ['Dentist', 'MedicalBusiness', 'LocalBusiness'],
+    '@type': 'Dentist',
     name: siteConfig.name,
     description: siteConfig.description,
     image: getAbsoluteUrl('/og-image.svg'),
     url: siteConfig.url,
-    telephone: siteConfig.phone,
+    telephone: '+918123338324',
     email: siteConfig.email,
     address: {
       '@type': 'PostalAddress',
@@ -34,7 +32,9 @@ export function getOrganizationSchema() {
       addressCountry: 'IN',
     },
     medicalSpecialty: 'Dentistry',
-    openingHours: ['Mo-Sa 10:00-20:30'],
+    areaServed: ['Vijayanagar', 'Bengaluru', 'Karnataka'],
+    hasMap: siteConfig.directionsUrl,
+    openingHours: ['Mo-Su 09:30-21:00'],
     priceRange: '$$',
     sameAs: socialProfiles,
     employee: doctors.map((doctor) => ({
@@ -52,6 +52,29 @@ export function getOrganizationSchema() {
   };
 }
 
+export function getLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    description: siteConfig.description,
+    image: getAbsoluteUrl('/og-image.svg'),
+    url: siteConfig.url,
+    telephone: '+918123338324',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar',
+      addressLocality: 'Bengaluru',
+      addressRegion: 'Karnataka',
+      postalCode: '560040',
+      addressCountry: 'IN',
+    },
+    openingHours: ['Mo-Su 09:30-21:00'],
+    priceRange: '$$',
+    sameAs: socialProfiles,
+  };
+}
+
 export function getHomepageSchema() {
   return {
     '@context': 'https://schema.org',
@@ -66,13 +89,42 @@ export function getHomepageSchema() {
   };
 }
 
+export function getFAQSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export function getSiteSchemaGraph() {
   return {
     '@context': 'https://schema.org',
     '@graph': [
       stripContext(getOrganizationSchema()),
+      stripContext(getLocalBusinessSchema()),
       stripContext(getHomepageSchema()),
     ],
+  };
+}
+
+export function getBreadcrumbSchema(items: Array<{ name: string; path: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: getAbsoluteUrl(item.path),
+    })),
   };
 }
 

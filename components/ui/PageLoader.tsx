@@ -30,7 +30,7 @@ export function PageLoader() {
             >
               <Image
                 src="/images/params-dental-logo-nav.png"
-                alt="Param's Dental"
+                alt="Param's Dental Clinic logo"
                 fill
                 className="object-contain"
                 sizes="256px"

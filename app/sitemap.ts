@@ -2,14 +2,29 @@ import type { MetadataRoute } from 'next';
 import { blogPosts, siteConfig } from '@/data/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/blogs', '/privacy-policy'];
+  const staticRoutes = [
+    '/',
+    '/about',
+    '/services',
+    '/doctors',
+    '/reviews',
+    '/contact',
+    '/book-appointment',
+    '/orthodontics',
+    '/invisalign',
+    '/dental-implants',
+    '/root-canal-treatment',
+    '/teeth-whitening',
+    '/blogs',
+    '/privacy-policy',
+  ];
 
   return [
     ...staticRoutes.map((route) => ({
-      url: `${siteConfig.url}${route}`,
+      url: new URL(route, siteConfig.url).toString(),
       lastModified: new Date(),
-      changeFrequency: route === '' ? 'weekly' as const : 'monthly' as const,
-      priority: route === '' ? 1 : 0.8,
+      changeFrequency: route === '/' ? 'weekly' as const : 'monthly' as const,
+      priority: route === '/' ? 1 : 0.8,
     })),
     ...blogPosts.map((post) => ({
       url: `${siteConfig.url}/blogs/${post.slug}`,

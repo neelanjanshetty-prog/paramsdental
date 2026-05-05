@@ -1,13 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
-import { navItems, services, siteConfig } from '@/data/site';
+import { Instagram } from 'lucide-react';
+import { sitelinkItems, siteConfig } from '@/data/site';
 
 const socialLinks = [
-  { href: 'https://www.instagram.com/paramsdental', icon: Instagram, label: 'Instagram' },
-  { href: 'https://www.facebook.com/paramsdental', icon: Facebook, label: 'Facebook' },
-  { href: 'https://www.linkedin.com/company/paramsdental', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://twitter.com/paramsdental', icon: Twitter, label: 'Twitter' },
+  { href: 'https://www.instagram.com/paramsdentalblr/', icon: Instagram, label: 'Instagram' },
 ];
 
 export function Footer() {
@@ -41,11 +38,11 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-white/55">Quick Links</h4>
             <ul className="mt-5 space-y-3 text-sm text-white/72">
-              {navItems.map((item) => (
+              {sitelinkItems.map((item) => (
                 <li key={item.href}>
-                  <a href={`/${item.href}`} className="transition hover:text-white">
+                  <Link href={item.href} className="transition hover:text-white">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,13 +51,31 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-white/55">Services</h4>
             <ul className="mt-5 space-y-3 text-sm text-white/72">
-              {services.slice(0, 5).map((service) => (
-                <li key={service.slug}>
-                  <a href="/#services" className="transition hover:text-white">
-                    {service.title}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link href="/invisalign" className="transition hover:text-white">
+                  Invisalign
+                </Link>
+              </li>
+              <li>
+                <Link href="/orthodontics" className="transition hover:text-white">
+                  Orthodontics
+                </Link>
+              </li>
+              <li>
+                <Link href="/dental-implants" className="transition hover:text-white">
+                  Dental Implants
+                </Link>
+              </li>
+              <li>
+                <Link href="/root-canal-treatment" className="transition hover:text-white">
+                  Root Canal Treatment
+                </Link>
+              </li>
+              <li>
+                <Link href="/teeth-whitening" className="transition hover:text-white">
+                  Teeth Whitening
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -113,9 +128,9 @@ export function Footer() {
             <a href="/sitemap.xml" className="transition hover:text-white">
               Sitemap
             </a>
-            <a href="/#appointment" className="transition hover:text-white">
+            <Link href="/book-appointment" className="transition hover:text-white">
               Book Appointment
-            </a>
+            </Link>
           </div>
         </div>
       </div>

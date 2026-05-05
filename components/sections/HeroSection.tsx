@@ -2,11 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, PlayCircle, Star } from 'lucide-react';
-import { siteConfig, stats } from '@/data/site';
+import { stats } from '@/data/site';
 import { useGsapParallax } from '@/hooks/useGsapParallax';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { HeroScene } from '@/components/ui/HeroScene';
 import { Reveal } from '@/components/ui/Reveal';
+
+function navigateTo(path: string) {
+  window.location.href = path;
+}
 
 function scrollToSection(sectionId: string) {
   document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,7 +28,7 @@ export function HeroSection() {
       <div className="hero-parallax absolute bottom-20 left-1/2 h-32 w-32 rounded-full bg-primary-600/15 blur-3xl md:h-52 md:w-52" />
 
       <motion.div
-        className="absolute left-[8%] top-[24%] hidden rounded-full border border-white/60 bg-white/65 px-4 py-3 shadow-panel md:block"
+        className="absolute right-[34%] top-[18%] hidden rounded-full border border-white/60 bg-white/65 px-4 py-3 shadow-panel xl:block"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -42,22 +46,22 @@ export function HeroSection() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
             <Reveal>
-              <span className="section-kicker">Luxury Dentistry in Bangalore</span>
+              <span className="section-kicker">Advanced dental care in Vijayanagar</span>
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="mt-5 max-w-3xl text-balance text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:mt-6 md:text-7xl md:leading-[0.95]">
-                {siteConfig.tagline}
+                Dentist in Vijayanagar, Bengaluru for confident family smiles
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-5 max-w-2xl text-base leading-7 text-[rgb(var(--muted-ink))] md:mt-6 md:text-xl md:leading-8">
-                Advanced dental care with modern technology, experienced doctors, and pain-free treatments.
+                Advanced dental care with orthodontics, Invisalign, dental implants, root canal treatment, teeth whitening, and family dentistry from a team trusted by 10K+ patients.
               </p>
             </Reveal>
 
             <Reveal delay={0.24}>
               <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
-                <button type="button" className="button-primary w-full gap-2 sm:w-auto" onClick={() => scrollToSection('appointment')}>
+                <button type="button" className="button-primary w-full gap-2 sm:w-auto" onClick={() => navigateTo('/book-appointment#appointment')}>
                   Book Appointment
                   <ArrowRight className="h-4 w-4" />
                 </button>

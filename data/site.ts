@@ -109,33 +109,42 @@ export type IconKey =
   | 'Tooth';
 
 export const siteConfig = {
-  name: "Param's Dental",
+  name: "Param's Dental Clinic",
   description:
-    'Luxury, technology-led dental care with experienced clinicians, painless treatments, and a calm premium experience.',
-  tagline: 'Your Perfect Smile Starts Here',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://paramsdental.com',
+    "Param's Dental Clinic in Vijayanagar, Bengaluru offers advanced dental care, orthodontics, Invisalign, implants, root canal treatment, teeth whitening, and family dentistry.",
+  tagline: 'Dentist in Vijayanagar, Bengaluru',
+  url: 'https://paramsdental.com',
   email: 'paramsdental@gmail.com',
-  phone: '081233 38324',
+  phone: '+91 81233 38324',
   phoneHref: 'tel:+918123338324',
   whatsapp: '919902535254',
   whatsappUrl:
     'https://wa.me/919902535254?text=Hi%20Param%27s%20Dental%2C%20I%20would%20like%20to%20book%20an%20appointment.',
-  address: '1175, 1st A Main Rd, Hoshalli Extension, Vijayanagar, Bengaluru – 560040\nNear Hosahalli Metro Station',
+  address: '1175, 1st A Main Rd, Hoshalli Extension, Stage 1, Vijayanagar, Bengaluru, Karnataka 560040\nNear Hosahalli Metro Station',
   directionsUrl: 'https://share.google/fricUdGxm2tMZ3QDI',
   hours: [
-    'Mon - Sat: 10:00 AM - 8:30 PM',
-    'Sunday: Emergencies & prior bookings',
+    'Monday - Sunday: 9:30 AM - 9:00 PM',
   ],
 };
 
 export const navItems: NavItem[] = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#dentists', label: 'Dentists' },
-  { href: '#services', label: 'Services' },
-  { href: '#blogs', label: 'Blogs' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/doctors', label: 'Doctors' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/contact', label: 'Contact' },
+];
+
+export const sitelinkItems: NavItem[] = [
+  { href: '/book-appointment', label: 'Book Appointment' },
+  { href: '/services', label: 'Services' },
+  { href: '/doctors', label: 'Doctors' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/invisalign', label: 'Invisalign' },
+  { href: '/orthodontics', label: 'Orthodontics' },
+  { href: '/dental-implants', label: 'Dental Implants' },
+  { href: '/root-canal-treatment', label: 'Root Canal Treatment' },
 ];
 
 export const stats: Stat[] = [
@@ -357,34 +366,39 @@ export const services: Service[] = [
 
 export const faqs: FAQItem[] = [
   {
-    question: 'Is dental treatment painful?',
+    question: "How do I book an appointment at Param's Dental Clinic?",
     answer:
-      'Most treatments today are far gentler than patients expect. We use modern anesthesia, careful pacing, and comfort-focused techniques to keep procedures calm and manageable.',
+      "You can book online through the appointment page, call +91 81233 38324, or message the clinic on WhatsApp. The team will confirm your preferred date, time, and treatment need.",
   },
   {
-    question: 'How often should I visit the dentist?',
+    question: "Where is Param's Dental Clinic located?",
     answer:
-      'For most patients, every six months is ideal for preventive care. If you have gum concerns, orthodontic treatment, or frequent sensitivity, we may recommend more frequent visits.',
+      "Param's Dental Clinic is located at 1175, 1st A Main Rd, Hoshalli Extension, Stage 1, Vijayanagar, Bengaluru, Karnataka 560040, near Hosahalli Metro Station.",
   },
   {
-    question: 'What is the cost of teeth whitening?',
+    question: 'What dental treatments are available?',
     answer:
-      'Whitening plans vary depending on stain severity and the shade target. We provide a clear quote after examining your teeth and confirming the best protocol for you.',
+      'The clinic provides advanced dental care including preventive dentistry, orthodontics, Invisalign, dental implants, root canal treatment, teeth whitening, crowns, extractions, pediatric dentistry, and family dental care.',
   },
   {
-    question: 'Do you provide emergency dental care?',
+    question: 'Do you provide Invisalign treatment?',
     answer:
-      'Yes. We keep room in our schedule for urgent pain, swelling, broken teeth, and trauma cases so you can be assessed quickly.',
+      'Yes. Param\'s Dental Clinic offers Invisalign and clear aligner consultations in Vijayanagar with digital planning and orthodontist-led follow-up.',
   },
   {
-    question: 'Are aligners better than braces?',
+    question: 'Do you provide root canal treatment?',
     answer:
-      'Neither is universally better. Aligners are discreet and removable, while braces can be more effective for complex tooth movement. We will recommend the most predictable option for your case.',
+      'Yes. Root canal treatment is available for infected or painful teeth, using modern endodontic protocols focused on comfort, disinfection, and tooth preservation.',
   },
   {
-    question: 'How long does a root canal take?',
+    question: 'Do you provide dental implants?',
     answer:
-      'Most root canal appointments take around 60 to 90 minutes, though complex teeth may need more time or an additional appointment.',
+      'Yes. The clinic provides dental implant consultation and restoration planning for missing teeth, with a focus on function, aesthetics, and long-term stability.',
+  },
+  {
+    question: "Is Param's Dental Clinic suitable for family dental care?",
+    answer:
+      "Yes. The clinic welcomes adults, children, and seniors for family dentistry, routine check-ups, preventive care, cosmetic treatments, and advanced dental procedures.",
   },
 ];
 
@@ -629,8 +643,8 @@ export const transformationCase = {
   label: 'Smile Transformation',
   description:
     'Composite contouring, whitening, and ceramic finishing combined for a brighter, more balanced smile line.',
-  beforeImage: '/illustrations/before-smile.svg',
-  afterImage: '/illustrations/after-smile.svg',
+  beforeImage: '/images/smile-before.png',
+  afterImage: '/images/smile-after.png',
 };
 
 export const appointmentSlots = [

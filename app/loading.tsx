@@ -7,7 +7,7 @@ export default function Loading() {
         <div className="relative mx-auto h-28 w-56">
           <Image
             src="/images/params-dental-logo-nav.png"
-            alt="Param's Dental"
+            alt="Param's Dental Clinic logo"
             fill
             className="object-contain"
             sizes="224px"

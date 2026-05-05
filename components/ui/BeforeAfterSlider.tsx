@@ -18,27 +18,25 @@ export function BeforeAfterSlider({
 
   return (
     <div className="glass-panel gradient-border relative overflow-hidden rounded-[30px] p-4">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
+      <div className="relative aspect-square overflow-hidden rounded-[24px]">
         <Image
-          src={beforeImage}
-          alt={`${label} before treatment`}
+          src={afterImage}
+          alt={`${label} after treatment`}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
-          className="absolute inset-y-0 left-0 overflow-hidden"
-          style={{ width: `${position}%` }}
+          className="absolute inset-0"
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         >
-          <div className="relative h-full w-[120%]">
-            <Image
-              src={afterImage}
-              alt={`${label} after treatment`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+          <Image
+            src={beforeImage}
+            alt={`${label} before treatment`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
         <div
           className="absolute inset-y-0 z-10 w-1 rounded-full bg-white shadow-glow"
@@ -59,8 +57,8 @@ export function BeforeAfterSlider({
         aria-label={`Adjust ${label} before and after comparison`}
       />
       <div className="mt-3 flex justify-between text-xs font-semibold uppercase tracking-[0.3em] text-[rgb(var(--muted-ink))]">
-        <span>After</span>
         <span>Before</span>
+        <span>After</span>
       </div>
     </div>
   );

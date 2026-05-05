@@ -5,9 +5,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, Sparkles, X } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { navItems } from '@/data/site';
-import { useActiveSection } from '@/hooks/useActiveSection';
+import { useEffect, useState } from 'react';
+import { navItems, sitelinkItems } from '@/data/site';
 import { cn } from '@/utils/cn';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
@@ -15,18 +14,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const sectionIds = useMemo(() => navItems.map((item) => item.href.replace('#', '')), []);
-  const activeSection = useActiveSection(sectionIds);
-
-  const navigateToSection = (target: string) => {
-    if (pathname !== '/') {
-      window.location.href = `/${target}`;
-      return;
-    }
-
-    const element = document.querySelector(target);
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 28);
@@ -61,7 +48,7 @@ export function Navbar() {
               <div className="relative h-16 w-40 overflow-hidden sm:h-[72px] sm:w-48 lg:h-[76px] lg:w-56">
                 <Image
                   src="/images/params-dental-logo-nav.png"
-                  alt="Param's Dental"
+                  alt="Param's Dental Clinic logo"
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 160px, (max-width: 1024px) 192px, 224px"
@@ -72,14 +59,12 @@ export function Navbar() {
 
             <nav className="hidden items-center gap-1 rounded-full border border-white/40 bg-white/55 px-2 py-2 dark:border-white/10 dark:bg-slate-950/35 lg:flex">
               {navItems.map((item) => {
-                const sectionId = item.href.replace('#', '');
-                const isActive = activeSection === sectionId;
+                const isActive = pathname === item.href;
 
                 return (
-                  <button
+                  <Link
                     key={item.href}
-                    type="button"
-                    onClick={() => navigateToSection(item.href)}
+                    href={item.href}
                     className={cn(
                       'rounded-full px-4 py-2 text-sm font-medium transition',
                       isActive
@@ -88,20 +73,16 @@ export function Navbar() {
                     )}
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 );
               })}
             </nav>
 
             <div className="hidden items-center gap-3 lg:flex">
               <ThemeToggle />
-              <button
-                type="button"
-                className="button-primary"
-                onClick={() => navigateToSection('#appointment')}
-              >
+              <Link href="/book-appointment" className="button-primary">
                 Book Appointment
-              </button>
+              </Link>
             </div>
 
             <div className="flex items-center gap-2 lg:hidden">
@@ -140,7 +121,7 @@ export function Navbar() {
                 <div className="relative h-20 w-44">
                   <Image
                     src="/images/params-dental-logo-nav.png"
-                    alt="Param's Dental"
+                    alt="Param's Dental Clinic logo"
                     fill
                     className="object-contain"
                     sizes="176px"
@@ -158,35 +139,32 @@ export function Navbar() {
               </div>
 
               <div className="mt-10 space-y-3">
-                {navItems.map((item, index) => (
-                  <motion.button
+                {[{ href: '/', label: 'Home' }, ...sitelinkItems].map((item, index) => (
+                  <motion.div
                     key={item.href}
-                    type="button"
-                    onClick={() => {
-                      setIsOpen(false);
-                      navigateToSection(item.href);
-                    }}
-                    className="glass-panel flex w-full items-center justify-between rounded-3xl px-5 py-4 text-left text-base font-medium text-ink"
                     initial={{ opacity: 0, x: 24 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * index }}
                   >
-                    <span>{item.label}</span>
-                    <Sparkles className="h-4 w-4 text-secondary" />
-                  </motion.button>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="glass-panel flex w-full items-center justify-between rounded-3xl px-5 py-4 text-left text-base font-medium text-ink"
+                    >
+                      <span>{item.label}</span>
+                      <Sparkles className="h-4 w-4 text-secondary" />
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 
-              <button
-                type="button"
+              <Link
+                href="/book-appointment"
                 className="button-primary mt-auto"
-                onClick={() => {
-                  setIsOpen(false);
-                  navigateToSection('#appointment');
-                }}
+                onClick={() => setIsOpen(false)}
               >
                 Book Appointment
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         ) : null}

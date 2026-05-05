@@ -33,6 +33,15 @@ const defaultValues: AppointmentFormData = {
   message: '',
 };
 
+const appointmentServiceOptions = [
+  'General Dental Consultation',
+  'Invisalign',
+  'Orthodontics',
+  ...services.map((service) => service.title),
+];
+
+const uniqueServiceOptions = Array.from(new Set(appointmentServiceOptions));
+
 function getClinicDateTime(date: Date) {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Kolkata',
@@ -93,6 +102,15 @@ export function AppointmentSection() {
 
     return appointmentSlots.filter((slot) => getSlotMinutes(slot) > clinicNow.minutes);
   }, [clinicNow.minutes, selectedDate, todayIso]);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const service = searchParams.get('service');
+
+    if (service) {
+      setValue('service', service, { shouldValidate: true, shouldDirty: true });
+    }
+  }, [setValue]);
 
   useEffect(() => {
     const handlePrefill = (event: Event) => {
@@ -163,20 +181,26 @@ export function AppointmentSection() {
                 </div>
 
                 <div className="mt-5 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3 md:gap-4">
-                  <div className="flex min-w-0 items-center gap-2 rounded-[18px] border border-primary-100 bg-white/80 p-3 dark:border-primary-900 dark:bg-white/5 sm:rounded-[24px] sm:p-4 md:block">
+                  <a
+                    href={siteConfig.phoneHref}
+                    className="flex min-w-0 items-center gap-2 rounded-[18px] border border-primary-100 bg-white/80 p-3 transition hover:-translate-y-0.5 hover:border-primary-300 dark:border-primary-900 dark:bg-white/5 sm:rounded-[24px] sm:p-4 md:block"
+                  >
                     <PhoneCall className="h-4 w-4 shrink-0 text-primary-600" />
                     <div className="min-w-0 md:mt-3">
                       <p className="truncate text-xs font-semibold text-ink sm:text-sm">{siteConfig.phone}</p>
                       <p className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-[rgb(var(--muted-ink))] sm:text-xs sm:tracking-[0.24em]">Call</p>
                     </div>
-                  </div>
-                  <div className="flex min-w-0 items-center gap-2 rounded-[18px] border border-primary-100 bg-white/80 p-3 dark:border-primary-900 dark:bg-white/5 sm:rounded-[24px] sm:p-4 md:block">
+                  </a>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="flex min-w-0 items-center gap-2 rounded-[18px] border border-primary-100 bg-white/80 p-3 transition hover:-translate-y-0.5 hover:border-primary-300 dark:border-primary-900 dark:bg-white/5 sm:rounded-[24px] sm:p-4 md:block"
+                  >
                     <Mail className="h-4 w-4 shrink-0 text-primary-600" />
                     <div className="min-w-0 md:mt-3">
                       <p className="truncate text-xs font-semibold text-ink sm:text-sm">{siteConfig.email}</p>
                       <p className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-[rgb(var(--muted-ink))] sm:text-xs sm:tracking-[0.24em]">Email</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </Reveal>
@@ -245,9 +269,9 @@ export function AppointmentSection() {
                       className="w-full rounded-xl border border-primary-100 bg-white/70 px-4 py-3 text-sm shadow-sm transition focus:border-primary-400 focus:bg-white dark:border-primary-900 dark:bg-white/5 sm:rounded-2xl"
                     >
                       <option value="">Choose a service</option>
-                      {services.map((service) => (
-                        <option key={service.slug} value={service.title}>
-                          {service.title}
+                      {uniqueServiceOptions.map((service) => (
+                        <option key={service} value={service}>
+                          {service}
                         </option>
                       ))}
                     </select>
