@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -105,11 +106,13 @@ export function ReviewsSection() {
                   <div className="glass-panel flex h-full flex-col rounded-[30px] p-6 shadow-panel">
                     <div className="flex items-center gap-4">
                       <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/60">
-                        <img
+                        <Image
                           src={review.profile_photo_url}
                           alt={review.author_name}
-                          className="h-full w-full object-cover"
-                          loading="lazy"
+                          fill
+                          className="object-cover"
+                          sizes="56px"
+                          unoptimized={review.profile_photo_url.startsWith('http')}
                         />
                       </div>
                       <div>
