@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { appointmentSlots, services, siteConfig } from '@/data/site';
 import { buildUpcomingDates } from '@/utils/date';
+import { pushDataLayerEvent } from '@/utils/gtm';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -147,6 +148,10 @@ export function AppointmentSection() {
       throw new Error(result?.error ?? 'Unable to book appointment');
     }
 
+    pushDataLayerEvent({
+      event: 'appointment_form_submit',
+      form_name: 'book_appointment',
+    });
     setSubmitError('');
     setShowSuccess(true);
     reset(defaultValues);

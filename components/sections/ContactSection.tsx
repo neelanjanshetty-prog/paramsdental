@@ -5,6 +5,7 @@ import { MapPinned, MessagesSquare, Navigation, PhoneCall } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { siteConfig } from '@/data/site';
+import { pushDataLayerEvent } from '@/utils/gtm';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
@@ -46,6 +47,10 @@ export function ContactSection() {
       throw new Error(result?.error ?? 'Unable to submit inquiry');
     }
 
+    pushDataLayerEvent({
+      event: 'contact_form_submit',
+      form_name: 'contact_form',
+    });
     setSubmitError('');
     setSuccess(true);
     reset();
