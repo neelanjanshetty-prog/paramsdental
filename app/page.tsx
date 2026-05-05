@@ -8,6 +8,7 @@ import { CTASection } from '@/components/sections/CTASection';
 import { DentistsSection } from '@/components/sections/DentistsSection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { PartnersSlider } from '@/components/sections/PartnersSlider';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <AboutSection />
       <DentistsSection />
       <ServicesSection />
+      <PartnersSlider />
       <AppointmentSection />
       <BlogSection />
       <FAQSection />

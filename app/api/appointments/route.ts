@@ -1,20 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { siteConfig } from '@/data/site';
-import { sendEmailJS } from '@/utils/emailjs';
 
 type AppointmentPayload = {
   fullName: string;
   phone: string;
   email: string;
+  age?: string;
   service: string;
   preferredDate: string;
   preferredTime: string;
   message?: string;
 };
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
 
 function getSlotMinutes(slot: string) {
   const match = slot.match(/^(\d{1,2}):(\d{2})\s(AM|PM)$/);
@@ -49,107 +44,132 @@ function getClinicDateTime() {
   };
 }
 
+function getDashboardAppointmentUrl() {
+  const baseUrl = process.env.NEXT_PUBLIC_DASHBOARD_API_URL || 'https://api.paramsdental.com';
+
+  return `${baseUrl.replace(/\/$/, '')}/api/public/appointments`;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const payload = (await request.json()) as AppointmentPayload;
+    const name = payload.fullName?.trim();
+    const phone = payload.phone?.trim();
+    const date = payload.preferredDate?.trim();
+    const time = payload.preferredTime?.trim();
 
-    if (
-      !payload.fullName ||
-      !payload.phone ||
-      !payload.email ||
-      !payload.service ||
-      !payload.preferredDate ||
-      !payload.preferredTime
-    ) {
+    if (!name || !phone || !date || !time) {
       return NextResponse.json(
-        { success: false, error: 'Missing required appointment fields.' },
-        { status: 400 }
-      );
-    }
-
-    if (!isValidEmail(payload.email)) {
-      return NextResponse.json(
-        { success: false, error: 'A valid email address is required.' },
+        {
+          success: false,
+          message: 'Name, phone, date, and time are required.',
+          error: 'Name, phone, date, and time are required.',
+        },
         { status: 400 }
       );
     }
 
     const clinicNow = getClinicDateTime();
-    const requestedMinutes = getSlotMinutes(payload.preferredTime);
+    const requestedMinutes = getSlotMinutes(time);
 
     if (requestedMinutes === null) {
       return NextResponse.json(
-        { success: false, error: 'Please choose a valid appointment time.' },
+        {
+          success: false,
+          message: 'Please choose a valid appointment time.',
+          error: 'Please choose a valid appointment time.',
+        },
         { status: 400 }
       );
     }
 
-    if (payload.preferredDate < clinicNow.isoDate) {
-      return NextResponse.json(
-        { success: false, error: 'Please choose today or an upcoming date.' },
-        { status: 400 }
-      );
-    }
-
-    if (payload.preferredDate === clinicNow.isoDate && requestedMinutes <= clinicNow.minutes) {
-      return NextResponse.json(
-        { success: false, error: 'Please choose a later time slot for today.' },
-        { status: 400 }
-      );
-    }
-
-    const emailStatus = await sendEmailJS({
-      to_email: siteConfig.email,
-      recipient_email: siteConfig.email,
-      form_type: 'appointment',
-      name: payload.fullName,
-      full_name: payload.fullName,
-      phone: payload.phone,
-      email: payload.email,
-      service: payload.service,
-      date: payload.preferredDate,
-      time: payload.preferredTime,
-      preferred_date: payload.preferredDate,
-      preferred_time: payload.preferredTime,
-      message: payload.message ?? '',
-    });
-
-    if (!emailStatus.sent) {
+    if (date < clinicNow.isoDate) {
       return NextResponse.json(
         {
           success: false,
-          error: emailStatus.enabled
-            ? 'Appointment received, but the email notification could not be sent. Please check EmailJS settings.'
-            : 'Email notifications are not configured. Please add EmailJS environment variables.',
-          emailStatus,
+          message: 'Please choose today or an upcoming date.',
+          error: 'Please choose today or an upcoming date.',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (date === clinicNow.isoDate && requestedMinutes <= clinicNow.minutes) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Please choose a later time slot for today.',
+          error: 'Please choose a later time slot for today.',
+        },
+        { status: 400 }
+      );
+    }
+
+    const publicBookingApiKey = process.env.PUBLIC_BOOKING_API_KEY;
+
+    if (!publicBookingApiKey) {
+      console.error('PUBLIC_BOOKING_API_KEY is not configured');
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Unable to submit appointment request. Please try again or contact the clinic.',
+          error: 'Unable to submit appointment request. Please try again or contact the clinic.',
+        },
+        { status: 500 }
+      );
+    }
+
+    const dashboardResponse = await fetch(getDashboardAppointmentUrl(), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-public-booking-key': publicBookingApiKey,
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        email: payload.email?.trim() ?? '',
+        age: payload.age ?? '',
+        date,
+        time,
+        service: payload.service?.trim() ?? '',
+        message: payload.message?.trim() ?? '',
+        source: 'website',
+      }),
+    });
+
+    const dashboardResult = await dashboardResponse.json().catch(() => null) as { success?: boolean } | null;
+
+    if (!dashboardResponse.ok || dashboardResult?.success === false) {
+      console.error('Dashboard appointment API failed', {
+        status: dashboardResponse.status,
+        response: dashboardResult,
+      });
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Unable to submit appointment request. Please try again or contact the clinic.',
+          error: 'Unable to submit appointment request. Please try again or contact the clinic.',
         },
         { status: 502 }
       );
     }
 
-    const bookingRecord = {
-      ...payload,
-      submittedAt: new Date().toISOString(),
-      integrationStatus: {
-        recipientEmail: siteConfig.email,
-        emailjsConfigured: emailStatus.enabled,
-        emailjsSent: emailStatus.sent,
-        mongodbConfigured: Boolean(process.env.MONGODB_URI),
-      },
-    };
-
-    console.info('Appointment request received', bookingRecord);
-
     return NextResponse.json({
       success: true,
-      message: 'Appointment booked successfully.',
-      data: bookingRecord,
+      message: 'Appointment request submitted successfully',
     });
   } catch (error) {
     console.error('Appointment API error', error);
 
     return NextResponse.json(
-      { success: false, error: 'Unable to process appointment request.' },
+      {
+        success: false,
+        message: 'Unable to submit appointment request. Please try again or contact the clinic.',
+        error: 'Unable to submit appointment request. Please try again or contact the clinic.',
+      },
       { status: 500 }
     );
   }
