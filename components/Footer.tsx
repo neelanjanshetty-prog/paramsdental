@@ -109,7 +109,7 @@ export function Footer() {
               <span className="whitespace-nowrap">Built by</span>
               <span className="relative block h-7 w-20 overflow-hidden">
                 <Image
-                  src="/images/enness-studio-logo-white.png"
+                  src="/images/enness-studio-logo-white.webp"
                   alt="ENNESS Studio"
                   fill
                   className="object-contain opacity-80 transition group-hover:opacity-100"

@@ -7,13 +7,13 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 const partnerLogos = [
   {
     name: 'iTero',
-    src: '/images/partners/itero.png',
+    src: '/images/partners/itero.webp',
     width: 2392,
     height: 954,
   },
   {
     name: 'IndiLase Laser',
-    src: '/images/partners/indilase-laser.png',
+    src: '/images/partners/indilase-laser.webp',
     width: 1254,
     height: 1254,
   },
@@ -25,7 +25,7 @@ const partnerLogos = [
   },
   {
     name: 'Acteon',
-    src: '/images/partners/acteon.jpg',
+    src: '/images/partners/acteon.webp',
     width: 2560,
     height: 517,
   },
@@ -37,19 +37,19 @@ const partnerLogos = [
   },
   {
     name: 'Invisalign First',
-    src: '/images/partners/invisalign-first.png',
+    src: '/images/partners/invisalign-first.webp',
     width: 637,
     height: 851,
   },
   {
     name: 'Invisalign Gold+ Provider',
-    src: '/images/partners/invisalign-gold-provider.png',
+    src: '/images/partners/invisalign-gold-provider.webp',
     width: 758,
     height: 200,
   },
   {
     name: 'Invisalign Teen Provider',
-    src: '/images/partners/invisalign-teen-provider.png',
+    src: '/images/partners/invisalign-teen-provider.webp',
     width: 938,
     height: 481,
   },

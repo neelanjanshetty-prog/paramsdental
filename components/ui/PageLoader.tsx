@@ -29,7 +29,7 @@ export function PageLoader() {
               transition={{ duration: 1.4, ease: 'easeInOut', repeat: Infinity }}
             >
               <Image
-                src="/images/params-dental-logo-nav.png"
+                src="/images/params-dental-logo-nav.webp"
                 alt="Param's Dental Clinic logo"
                 fill
                 className="object-contain"

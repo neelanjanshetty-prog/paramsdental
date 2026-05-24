@@ -18,7 +18,7 @@ export function AboutSection() {
               <div className="glass-panel gradient-border relative overflow-hidden rounded-[24px] p-3 sm:rounded-[34px] sm:p-4">
                 <div className="relative overflow-hidden rounded-[20px] sm:rounded-[28px]">
                   <Image
-                    src="/images/clinic-interior.jpg"
+                    src="/images/clinic-interior.webp"
                     alt="Modern Param's Dental clinic interior"
                     width={1350}
                     height={1800}

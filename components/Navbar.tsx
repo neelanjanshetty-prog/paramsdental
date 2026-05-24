@@ -47,7 +47,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center gap-3">
               <div className="relative h-16 w-40 overflow-hidden sm:h-[72px] sm:w-48 lg:h-[76px] lg:w-56">
                 <Image
-                  src="/images/params-dental-logo-nav.png"
+                  src="/images/params-dental-logo-nav.webp"
                   alt="Param's Dental Clinic logo"
                   fill
                   className="object-contain"
@@ -120,7 +120,7 @@ export function Navbar() {
               <div className="flex items-center justify-between">
                 <div className="relative h-20 w-44">
                   <Image
-                    src="/images/params-dental-logo-nav.png"
+                    src="/images/params-dental-logo-nav.webp"
                     alt="Param's Dental Clinic logo"
                     fill
                     className="object-contain"

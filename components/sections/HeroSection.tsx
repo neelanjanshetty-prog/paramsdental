@@ -5,7 +5,6 @@ import { ArrowRight, PlayCircle, Star } from 'lucide-react';
 import { stats } from '@/data/site';
 import { useGsapParallax } from '@/hooks/useGsapParallax';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { HeroScene } from '@/components/ui/HeroScene';
 import { Reveal } from '@/components/ui/Reveal';
 
 function navigateTo(path: string) {
@@ -26,16 +25,31 @@ export function HeroSection() {
       <div className="hero-parallax absolute -left-8 top-32 h-28 w-28 rounded-full bg-primary-200/50 blur-2xl md:h-40 md:w-40" />
       <div className="hero-parallax absolute right-6 top-24 h-32 w-32 rounded-full bg-secondary/30 blur-3xl md:h-56 md:w-56" />
       <div className="hero-parallax absolute bottom-20 left-1/2 h-32 w-32 rounded-full bg-primary-600/15 blur-3xl md:h-52 md:w-52" />
+      <div className="absolute inset-x-4 top-24 z-[1] aspect-video max-h-[520px] overflow-hidden rounded-[28px] border border-white/60 bg-white/80 opacity-25 shadow-halo backdrop-blur-2xl dark:border-white/10 dark:bg-primary-950/40 sm:inset-x-10 sm:rounded-[40px] md:top-28 lg:inset-x-auto lg:right-8 lg:w-[58vw] lg:opacity-65">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-label="3D animation of dental braces being applied to teeth"
+        >
+          <source src="/videos/braces-hero.webm" type="video/webm" />
+        </video>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/45 to-white/5 dark:from-slate-950/80 dark:via-slate-950/35 dark:to-transparent" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-white via-white/80 to-white/10 dark:from-slate-950 dark:via-slate-950/75 dark:to-slate-950/10" />
 
       <motion.div
-        className="absolute right-[34%] top-[18%] hidden rounded-full border border-white/60 bg-white/65 px-4 py-3 shadow-panel xl:block"
+        className="absolute right-[34%] top-[18%] z-[3] hidden rounded-full border border-white/60 bg-white/65 px-4 py-3 shadow-panel xl:block"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       >
         <p className="text-xs uppercase tracking-[0.35em] text-primary-500">Pain-free visits</p>
       </motion.div>
       <motion.div
-        className="absolute right-[8%] top-[60%] hidden rounded-full border border-white/50 bg-white/60 px-4 py-3 shadow-panel lg:block"
+        className="absolute right-[8%] top-[60%] z-[3] hidden rounded-full border border-white/50 bg-white/60 px-4 py-3 shadow-panel lg:block"
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -93,34 +107,6 @@ export function HeroSection() {
               </div>
             </Reveal>
           </div>
-
-          <Reveal direction="right" delay={0.18}>
-            <div className="relative mx-auto h-[340px] w-full max-w-[620px] sm:h-[430px] lg:h-[540px]">
-              <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-white/85 via-white/30 to-primary-100/80 shadow-halo backdrop-blur-2xl dark:from-primary-950/60 dark:via-primary-950/30 dark:to-primary-900/20 sm:rounded-[40px]" />
-              <div className="absolute inset-4 rounded-[24px] border border-white/60 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.85),rgba(255,255,255,0.12))] dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,rgba(76,185,231,0.08),rgba(13,76,146,0.06))] sm:inset-5 sm:rounded-[34px]" />
-              <div className="absolute inset-0">
-                <HeroScene />
-              </div>
-              <motion.div
-                className="glass-panel absolute left-4 top-5 rounded-[18px] p-3 md:left-8 md:rounded-[24px] md:p-4"
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <p className="text-[10px] uppercase tracking-[0.22em] text-primary-500 sm:text-xs sm:tracking-[0.35em]">Premium Workflow</p>
-                <p className="mt-2 text-xs font-semibold text-ink sm:text-sm">Consultation to confident smile</p>
-              </motion.div>
-              <motion.div
-                className="glass-panel absolute bottom-5 right-4 max-w-[180px] rounded-[18px] p-3 md:right-8 md:max-w-[220px] md:rounded-[24px] md:p-4"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5.4, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <p className="text-[10px] uppercase tracking-[0.22em] text-primary-500 sm:text-xs sm:tracking-[0.35em]">Patient Promise</p>
-                <p className="mt-2 text-xs leading-5 text-[rgb(var(--muted-ink))] sm:text-sm sm:leading-6">
-                  Calm diagnostics, precise planning, and meticulous aftercare.
-                </p>
-              </motion.div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>

@@ -187,7 +187,7 @@ export const doctors: Doctor[] = [
     badge: 'Gold Invisalign Provider',
     specialties: ['Founder', 'Orthodontist', 'Invisalign Specialist'],
     bio: 'Renowned for his expertise, precision, and patient-friendly approach, Dr. Paramesh Gowda provides high-quality dental care using advanced techniques and modern dentistry. From routine check-ups to specialized treatments, he ensures every patient receives comfortable, personalized, and reliable care at Params Dental Clinic.',
-    image: '/images/dr-paramesh-gowda.jpg',
+    image: '/images/dr-paramesh-gowda.webp',
   },
   {
     name: 'Dr. Shylashree Paramesh',
@@ -195,7 +195,7 @@ export const doctors: Doctor[] = [
     experience: '10+ years of experience',
     specialties: ['Orthodontist', 'Invisalign Specialist'],
     bio: 'Known for her gentle approach and attention to detail, Dr. Shylashree provides compassionate, personalized dental care. She focuses on patient education, preventive dentistry, and treatment plans that support long-term oral health.',
-    image: '/images/dr-shylashree-paramesh.jpg',
+    image: '/images/dr-shylashree-paramesh.webp',
   },
   {
     name: 'Dr. Rakshitha',
@@ -204,7 +204,7 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Dental Surgeon', 'BDS'],
     bio: 'Provides reliable dental care with a focus on patient comfort, careful diagnosis, and practical treatment planning.',
-    image: '/images/dr-rakshitha.jpeg',
+    image: '/images/dr-rakshitha.webp',
   },
   {
     name: 'Dr. Swapna',
@@ -213,7 +213,7 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Dental Surgeon', 'BDS'],
     bio: 'Offers compassionate dental care with attention to detail, preventive guidance, and smooth patient communication.',
-    image: '/images/dr-swapna.jpeg',
+    image: '/images/dr-swapna.webp',
   },
   {
     name: 'Dr. Nithin S.B',
@@ -221,7 +221,7 @@ export const doctors: Doctor[] = [
     experience: '12+ years experience',
     specialties: ['Prosthodontist', 'Implantologist'],
     bio: 'Specializes in prosthetic rehabilitation and implant dentistry with a focus on function, aesthetics, and long-term stability.',
-    image: '/images/dr-nithin.png',
+    image: '/images/dr-nithin.webp',
   },
   {
     name: 'Dr. Akhilesh',
@@ -229,15 +229,39 @@ export const doctors: Doctor[] = [
     experience: '5+ years experience',
     specialties: ['Endodontist', 'Root Canal Specialist'],
     bio: 'Focuses on root canal care and tooth-saving treatments using a calm, precise, and patient-friendly approach.',
-    image: '/images/dr-akhilesh-new.png',
+    image: '/images/dr-akhilesh-new.webp',
   },
   {
-    name: 'Dr. Suhas',
+    name: 'Dr. Bharath Gowda',
+    role: 'Endodontist',
+    experience: 'Consultant specialist',
+    specialties: ['Endodontist', 'Root Canal Specialist'],
+    bio: 'Provides endodontic care with a focus on precise diagnosis, tooth-saving treatment, and comfortable root canal procedures.',
+    image: '/images/dr-bharath-gowda.webp',
+  },
+  {
+    name: 'Dr. Suhas Shetty',
     role: 'Oral & Maxillofacial Surgeon',
     experience: '5+ years experience',
     specialties: ['Oral Surgeon', 'Maxillofacial Surgeon'],
     bio: 'Provides surgical dental care with careful planning, clear communication, and attention to patient comfort.',
-    image: '/illustrations/doctor-2.svg',
+    image: '/images/dr-suhas-shetty.webp',
+  },
+  {
+    name: 'Dr. Pushpalatha',
+    role: 'Pedodontist',
+    experience: 'Consultant specialist',
+    specialties: ['Pedodontist', 'Pediatric Dentistry'],
+    bio: 'Offers gentle pediatric dental care for children with a calm chairside approach, preventive guidance, and age-appropriate treatment planning.',
+    image: '/images/dr-pushpalatha.webp',
+  },
+  {
+    name: 'Dr. Amogha',
+    role: 'Pedodontist',
+    experience: 'Consultant specialist',
+    specialties: ['Pedodontist', 'Pediatric Dentistry'],
+    bio: 'Focuses on child-friendly dentistry, preventive oral health education, and comfortable dental visits for young patients.',
+    image: '/images/dr-amogha.webp',
   },
 ];
 
@@ -643,8 +667,8 @@ export const transformationCase = {
   label: 'Smile Transformation',
   description:
     'Composite contouring, whitening, and ceramic finishing combined for a brighter, more balanced smile line.',
-  beforeImage: '/images/smile-before.png',
-  afterImage: '/images/smile-after.png',
+  beforeImage: '/images/smile-before.webp',
+  afterImage: '/images/smile-after.webp',
 };
 
 export const appointmentSlots = [

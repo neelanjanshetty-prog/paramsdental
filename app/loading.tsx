@@ -6,7 +6,7 @@ export default function Loading() {
       <div className="text-center">
         <div className="relative mx-auto h-28 w-56">
           <Image
-            src="/images/params-dental-logo-nav.png"
+            src="/images/params-dental-logo-nav.webp"
             alt="Param's Dental Clinic logo"
             fill
             className="object-contain"
