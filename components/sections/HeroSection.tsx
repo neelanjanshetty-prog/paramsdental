@@ -35,6 +35,7 @@ export function HeroSection() {
           preload="metadata"
           aria-label="3D animation of dental braces being applied to teeth"
         >
+          <source src="/videos/braces-hero.mp4" type="video/mp4" />
           <source src="/videos/braces-hero.webm" type="video/webm" />
         </video>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/45 to-white/5 dark:from-slate-950/80 dark:via-slate-950/35 dark:to-transparent" />
