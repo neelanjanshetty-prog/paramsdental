@@ -104,7 +104,7 @@ export const seoPages: SeoPage[] = [
     h1: "Patient Reviews for Param's Dental Clinic Bengaluru",
     intro:
       'Patients choose our Vijayanagar clinic for attentive doctors, clean facilities, advanced dental care, and a smooth treatment experience from consultation to aftercare.',
-    highlights: ['4.9 Google rating', '10K+ patients treated', 'Premium clinical experience'],
+    highlights: ['5.0 Google rating', '10K+ patients treated', 'Premium clinical experience'],
     bookingService: 'General Dental Consultation',
     sections: [
       {

@@ -2,10 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, PlayCircle, Star } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { stats } from '@/data/site';
 import { useGsapParallax } from '@/hooks/useGsapParallax';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { Reveal } from '@/components/ui/Reveal';
+
+type ReviewsSummaryResponse = {
+  averageRating: number;
+};
+
+const reviewsRefreshIntervalMs = 30 * 60 * 1000;
 
 function navigateTo(path: string) {
   window.location.href = path;
@@ -16,7 +23,39 @@ function scrollToSection(sectionId: string) {
 }
 
 export function HeroSection() {
+  const [googleRating, setGoogleRating] = useState<number | null>(null);
+
   useGsapParallax('.hero-parallax', 14);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadGoogleRating = async () => {
+      try {
+        const response = await fetch('/api/reviews', { cache: 'no-store' });
+
+        if (!response.ok) {
+          throw new Error(`Reviews request failed with status ${response.status}`);
+        }
+
+        const payload = (await response.json()) as ReviewsSummaryResponse;
+
+        if (isMounted && Number.isFinite(payload.averageRating)) {
+          setGoogleRating(payload.averageRating);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadGoogleRating();
+    const refreshTimer = window.setInterval(loadGoogleRating, reviewsRefreshIntervalMs);
+
+    return () => {
+      isMounted = false;
+      window.clearInterval(refreshTimer);
+    };
+  }, []);
 
   return (
     <section id="home" className="section-shell flex min-h-[auto] items-center pt-24 sm:min-h-screen md:pt-28">
@@ -99,7 +138,10 @@ export function HeroSection() {
                     className="glass-panel rounded-[20px] border border-white/50 p-4 shadow-panel sm:rounded-[26px] sm:p-5"
                   >
                     <p className="text-xl font-semibold text-ink sm:text-2xl md:text-3xl">
-                      <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                      <AnimatedCounter
+                        value={stat.label === 'Google Rating' && googleRating ? googleRating : stat.value}
+                        suffix={stat.suffix}
+                      />
                       {stat.label === 'Google Rating' ? <Star className="ml-1 inline h-5 w-5 fill-amber-400 text-amber-400" /> : null}
                     </p>
                     <p className="mt-2 text-xs leading-5 text-[rgb(var(--muted-ink))] sm:text-sm sm:leading-6">{stat.label}</p>

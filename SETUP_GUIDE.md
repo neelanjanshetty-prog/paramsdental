@@ -12,9 +12,13 @@ npm install
 The `.env.local` file is already created with placeholder values. Update it with your actual values:
 
 ```bash
-# Google Maps (optional)
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_actual_key_here
-NEXT_PUBLIC_GOOGLE_PLACE_ID=your_place_id_here
+# Google reviews (optional)
+GOOGLE_MAPS_API_KEY=your_actual_key_here
+GOOGLE_PLACE_ID=your_place_id_here
+GOOGLE_REVIEWS_REFRESH_SECONDS=1800
+GOOGLE_REVIEWS_FALLBACK_RATING=5
+GOOGLE_REVIEWS_FALLBACK_TOTAL=
+GOOGLE_MAPS_REVIEWS_URL=https://share.google/unpfxN1QDyrDJ9S7D
 
 # EmailJS Configuration (for contact forms)
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id

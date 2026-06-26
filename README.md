@@ -20,7 +20,7 @@ Premium, animated, mobile-first dental clinic website built with Next.js, React,
 - Filterable services with modal treatment details
 - Booking form with real-time validation, slot selection, and success popup
 - Separate contact/inquiry form with map embed and floating contact cards
-- Google reviews carousel with live Places API route and fallback data
+- Google reviews carousel with live Places API route, automatic refresh, and fallback data
 - Searchable blog cards plus full blog detail pages with related posts and share links
 - Animated FAQ accordion
 - Testimonial plus before/after comparison slider
@@ -93,6 +93,10 @@ Required for optional integrations:
 
 - `GOOGLE_MAPS_API_KEY`
 - `GOOGLE_PLACE_ID`
+- `GOOGLE_REVIEWS_REFRESH_SECONDS` (optional; defaults to 1800 seconds)
+- `GOOGLE_REVIEWS_FALLBACK_RATING` (optional; defaults to 5)
+- `GOOGLE_REVIEWS_FALLBACK_TOTAL` (optional)
+- `GOOGLE_MAPS_REVIEWS_URL` (optional)
 - `EMAILJS_SERVICE_ID`
 - `EMAILJS_TEMPLATE_ID`
 - `EMAILJS_PUBLIC_KEY`

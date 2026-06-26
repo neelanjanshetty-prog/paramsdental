@@ -5,29 +5,45 @@ import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Star } from 'lucide-react';
-import { fallbackReviews, type Review } from '@/data/site';
+import { fallbackReviews, googleReviewSummary, type Review } from '@/data/site';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SkeletonCard } from '@/components/ui/SkeletonCard';
 
 type ReviewsResponse = {
   averageRating: number;
-  totalReviews: number;
+  totalReviews: number | null;
   reviews: Review[];
   source: 'live' | 'fallback';
   googleMapsUrl: string;
+  fetchedAt?: string;
+  nextRefreshAt?: string;
+  isStale?: boolean;
 };
+
+const reviewsRefreshIntervalMs = 30 * 60 * 1000;
 
 export function ReviewsSection() {
   const [data, setData] = useState<ReviewsResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const hasReviews = Boolean(data?.reviews.length);
+  const reviewCountLabel = data?.totalReviews ? `${data.totalReviews} Google reviews` : 'Google reviews';
 
   useEffect(() => {
     let isMounted = true;
 
-    const loadReviews = async () => {
+    const loadReviews = async (showLoading = false) => {
+      if (showLoading && isMounted) {
+        setIsLoading(true);
+      }
+
       try {
-        const response = await fetch('/api/reviews');
+        const response = await fetch('/api/reviews', { cache: 'no-store' });
+
+        if (!response.ok) {
+          throw new Error(`Reviews request failed with status ${response.status}`);
+        }
+
         const payload = (await response.json()) as ReviewsResponse;
 
         if (isMounted) {
@@ -37,11 +53,11 @@ export function ReviewsSection() {
         console.error(error);
         if (isMounted) {
           setData({
-            averageRating: 4.9,
-            totalReviews: 128,
+            averageRating: googleReviewSummary.averageRating,
+            totalReviews: googleReviewSummary.totalReviews,
             reviews: fallbackReviews,
             source: 'fallback',
-            googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Param%27s+Dental',
+            googleMapsUrl: googleReviewSummary.reviewsUrl,
           });
         }
       } finally {
@@ -51,10 +67,14 @@ export function ReviewsSection() {
       }
     };
 
-    loadReviews();
+    loadReviews(true);
+    const refreshTimer = window.setInterval(() => {
+      loadReviews();
+    }, reviewsRefreshIntervalMs);
 
     return () => {
       isMounted = false;
+      window.clearInterval(refreshTimer);
     };
   }, []);
 
@@ -65,7 +85,7 @@ export function ReviewsSection() {
           <SectionHeading
             eyebrow="Google Reviews"
             title="Loved by patients who expect premium care"
-            description="This section is wired for live Google Places reviews and gracefully falls back to curated testimonials when API credentials are not configured."
+            description="Recent Google feedback from patients who visit Param's Dental for thoughtful, precise, and comfortable care."
             align="center"
           />
         </Reveal>
@@ -73,10 +93,12 @@ export function ReviewsSection() {
         <Reveal delay={0.08}>
           <div className="mt-8 flex flex-col items-center gap-4 text-center">
             <div className="glass-panel rounded-full px-5 py-3 text-sm font-semibold text-ink shadow-panel">
-              {isLoading ? 'Loading review summary...' : `${data?.averageRating.toFixed(1) ?? '4.9'} average rating`}
+              {isLoading
+                ? 'Loading review summary...'
+                : `${(data?.averageRating ?? googleReviewSummary.averageRating).toFixed(1)} average rating`}
             </div>
             <p className="text-sm uppercase tracking-[0.35em] text-[rgb(var(--muted-ink))]">
-              {isLoading ? 'Fetching latest reviews' : `${data?.totalReviews ?? 128} reviews`}
+              {isLoading ? 'Fetching latest reviews' : reviewCountLabel}
             </p>
           </div>
         </Reveal>
@@ -88,7 +110,7 @@ export function ReviewsSection() {
                 <SkeletonCard key={index} className="h-[300px]" />
               ))}
             </div>
-          ) : data ? (
+          ) : hasReviews && data ? (
             <Swiper
               modules={[Autoplay, Pagination]}
               slidesPerView={1}
@@ -139,6 +161,22 @@ export function ReviewsSection() {
                 </SwiperSlide>
               ))}
             </Swiper>
+          ) : data ? (
+            <Reveal>
+              <div className="glass-panel mx-auto max-w-3xl rounded-[30px] p-8 text-center shadow-panel">
+                <div className="flex justify-center gap-1">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="mt-5 text-lg font-semibold text-ink">
+                  Read the newest patient feedback directly on Google.
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[rgb(var(--muted-ink))]">
+                  Follow the link below for the current review count and latest patient comments.
+                </p>
+              </div>
+            </Reveal>
           ) : null}
         </div>
 

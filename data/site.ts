@@ -121,7 +121,7 @@ export const siteConfig = {
   whatsappUrl:
     'https://wa.me/919902535254?text=Hi%20Param%27s%20Dental%2C%20I%20would%20like%20to%20book%20an%20appointment.',
   address: '1175, 1st A Main Rd, Hoshalli Extension, Stage 1, Vijayanagar, Bengaluru, Karnataka 560040\nNear Hosahalli Metro Station',
-  directionsUrl: 'https://share.google/fricUdGxm2tMZ3QDI',
+  directionsUrl: 'https://share.google/unpfxN1QDyrDJ9S7D',
   hours: [
     'Monday - Sunday: 9:30 AM - 9:00 PM',
   ],
@@ -151,8 +151,14 @@ export const stats: Stat[] = [
   { value: 10, suffix: 'K+', label: 'Patients Treated' },
   { value: 10, suffix: '+', label: 'Years Experience' },
   { value: 25, suffix: '+', label: 'Dental Services' },
-  { value: 4.9, suffix: '', label: 'Google Rating' },
+  { value: 5, suffix: '', label: 'Google Rating' },
 ];
+
+export const googleReviewSummary = {
+  averageRating: 5,
+  totalReviews: null,
+  reviewsUrl: 'https://share.google/unpfxN1QDyrDJ9S7D',
+};
 
 export const aboutFeatures: Feature[] = [
   {
